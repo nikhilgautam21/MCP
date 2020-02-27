@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "63027818983",
+    "firebase_url": "https://mcp-project-269315.firebaseio.com",
+    "project_id": "mcp-project-269315",
+    "storage_bucket": "mcp-project-269315.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63027818983:android:4a225ddf6984e430fa4d42",
+        "android_client_info": {
+          "package_name": "com.mcp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63027818983-mv81i72oqtjebkl717h0uk1fh36f7lmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mcp.app",
+            "certificate_hash": "421aeb6a08be792c145022fd616ad3690085a5df"
+          }
+        },
+        {
+          "client_id": "63027818983-7llhhjrnvkrhou76nudd69nh6rvef5d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXkpXYxVygN6JxqXHL4fe2HIEhiMtPE38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63027818983-7llhhjrnvkrhou76nudd69nh6rvef5d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
