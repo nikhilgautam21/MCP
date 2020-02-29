@@ -1,0 +1,37 @@
+<ion-content>
+  <div class='m-add-outer'>
+    <form [formGroup]="complaintForm" (submit)="addComplaint()">
+      <ion-item>
+        <ion-label>Name*</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone*</ion-label>
+        <ion-input formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Address*</ion-label>
+        <ion-input formControlName="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Notes*</ion-label>
+        <ion-input formControlName="notes"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Image*</ion-label>
+        <ion-icon name="add" (click)="selectImage()"></ion-icon>
+      </ion-item>
+
+      <div>
+        <ion-button type="submit">Submit</ion-button>
+      </div>
+    </form>
+    <div>
+      <ion-item *ngFor="let item of pictures; let i=index">
+        <img class="m-comp-img" [src]="item" alt/>
+        <ion-icon name="close" (click)="deleteImage(i)"></ion-icon>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
