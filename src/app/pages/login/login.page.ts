@@ -22,10 +22,8 @@ export class LoginPage implements OnInit {
 
   login() {
     this.loginService.login().subscribe(res => {
-      debugger
       this.loginService.userData = res;
     }, err => {
-      debugger
       this.loginService.userData = [{ id: "37483llsgks", name: "Nikhil Gautam", email: "nikhil@yahoo.com" }]
       localStorage.setItem("user", JSON.stringify(this.loginService.userData))
       this.router.navigate(['/home'],{ replaceUrl: true })

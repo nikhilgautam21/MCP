@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="m-comp-list">
+    <ion-item>
+      <h4>Your Complaints</h4>
+    </ion-item>
+    <table>
+      <thead>
+        <th>Date</th>
+        <th>Complaint No.</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of complaints">
+          <td>{{item.date}}</td>
+          <td (click)="goToDetail(item)">#{{ item.id}}</td>
+          <td>
+            <span>
+              <p class="m-status" [ngClass]="{'red': item.status == 'onhold', 'black': item.status == 'invalid', 'yellow': item.status == 'inprogress', 'green': item.status == 'completed'}">
+                {{item.status}}
+              </p>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

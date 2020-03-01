@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-complaint-detail',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComplaintDetailPage implements OnInit {
 
-  constructor() { }
+  complaint: any
+  constructor(
+    public route: ActivatedRoute
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.complaint = JSON.parse(params["data"])
+    })
+  }
 
   ngOnInit() {
   }
