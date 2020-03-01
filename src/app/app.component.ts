@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {LoginService} from 'src/app/services/login.service';
+import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { UtilityService } from './services/utility.service';
 
@@ -24,10 +24,9 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      debugger
-      if(this.utils.getUserInfo()){
+      if (this.utils.getUserInfo()) {
         this.router.navigate(['/home'])
-      }else{
+      } else {
         this.router.navigate(['/login'])
       }
       this.statusBar.styleDefault();

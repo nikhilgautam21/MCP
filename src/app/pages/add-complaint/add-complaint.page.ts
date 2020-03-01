@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { ActionSheetController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { File } from '@ionic-native/file/ngx';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { DomSanitizer } from '@angular/platform-browser'; 
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-add-complaint',
@@ -27,13 +26,12 @@ export class AddComplaintPage implements OnInit {
     public formBuilder: FormBuilder,
     private camera: Camera,
     public actionSheetController: ActionSheetController,
-    private file: File,
-    private webview: WebView,
-    public domSanitizer: DomSanitizer
+    public domSanitizer: DomSanitizer,
+    public validationService: ValidationService
   ) {
     this.complaintForm = this.formBuilder.group({
       name: ["", Validators.required],
-      phone: ["", Validators.required],
+      phone: ["", [Validators.required, validationService.phoneValidator]],
       address: ["", Validators.required],
       images: [""],
       notes: ["", Validators.required]
@@ -44,7 +42,6 @@ export class AddComplaintPage implements OnInit {
   }
 
   addComplaint() {
-    debugger
   }
 
   pickImage(sourceType) {
@@ -60,18 +57,6 @@ export class AddComplaintPage implements OnInit {
       // If it's base64 (DATA_URL):
       let image = 'data:image/jpeg;base64,' + imageData;
       this.pictures.push(image)
-      //this.displayImage = this.domSanitizer.bypassSecurityTrustUrl(imageData)
-      // const tempFilename = imageData.substr(imageData.lastIndexOf('/') + 1);
-      // const tempBaseFilesystemPath = imageData.substr(0, imageData.lastIndexOf('/') + 1);
-
-      // const newBaseFilesystemPath = this.file.dataDirectory;
-
-      // this.file.copyFile(tempBaseFilesystemPath, tempFilename,
-      //   newBaseFilesystemPath, tempFilename);
-
-      // const storedPhoto = newBaseFilesystemPath + tempFilename;
-      // this.displayImage = this.webview.convertFileSrc(storedPhoto);
-      debugger
     }, (err) => {
       // Handle error
     });
@@ -92,10 +77,6 @@ export class AddComplaintPage implements OnInit {
         handler: () => {
           this.pickImage(this.camera.PictureSourceType.CAMERA);
         }
-      },
-      {
-        text: 'Cancel',
-        role: 'cancel'
       }
       ]
     });
@@ -106,6 +87,5 @@ export class AddComplaintPage implements OnInit {
     this.pictures = this.pictures.filter((item,i)=>{
       return i!=index
     })
-    debugger
   }
 }
