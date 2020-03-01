@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'add-complaint',
     loadChildren: () => import('./pages/add-complaint/add-complaint.module').then( m => m.AddComplaintPageModule)
   },
+  {
+    path: 'complaint-detail',
+    loadChildren: () => import('./pages/complaint-detail/complaint-detail.module').then( m => m.ComplaintDetailPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, PopoverController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { DomSanitizer } from '@angular/platform-browser'; 
+import { DomSanitizer } from '@angular/platform-browser';
 import { ValidationService } from 'src/app/services/validation.service';
+import { ComplaintService } from 'src/app/services/complaint.service';
+import {SuccessComplaintComponent} from 'src/app/shared/components/success-complaint/success-complaint.component'
 
 @Component({
   selector: 'app-add-complaint',
@@ -20,28 +22,27 @@ export class AddComplaintPage implements OnInit {
     maximumImagesCount: 3,
     quality: 50
   };
-  pictures:any = []
+  pictures: any = []
+  added: boolean;
 
   constructor(
     public formBuilder: FormBuilder,
     private camera: Camera,
     public actionSheetController: ActionSheetController,
     public domSanitizer: DomSanitizer,
-    public validationService: ValidationService
+    public validationService: ValidationService,
+    public complaintService: ComplaintService,
+    public popoverController: PopoverController
   ) {
     this.complaintForm = this.formBuilder.group({
       name: ["", Validators.required],
       phone: ["", [Validators.required, validationService.phoneValidator]],
       address: ["", Validators.required],
-      images: [""],
       notes: ["", Validators.required]
     })
   }
 
   ngOnInit() {
-  }
-
-  addComplaint() {
   }
 
   pickImage(sourceType) {
@@ -83,9 +84,42 @@ export class AddComplaintPage implements OnInit {
     await actionSheet.present();
   }
 
-  deleteImage(index){
-    this.pictures = this.pictures.filter((item,i)=>{
-      return i!=index
+  deleteImage(index) {
+    this.pictures = this.pictures.filter((item, i) => {
+      return i != index
     })
+  }
+
+  addComplaint() {
+    if (this.complaintForm.valid) {
+      let form = this.complaintForm.value
+      let complaint = {
+        name: form.name,
+        phone: form.phone,
+        address: form.address,
+        notes: form.notes,
+        images: this.pictures,
+        date: new Date()
+      }
+      this.complaintService.addComplaint(complaint).subscribe(res=>{
+
+      },err=>{
+        debugger
+        this.added = true;
+        this.presentPopover();
+      })
+    }
+  }
+
+
+  async presentPopover(ev: any = null) {
+    debugger
+    const popover = await this.popoverController.create({
+      component: SuccessComplaintComponent,
+      event: ev,
+      translucent: true,
+      cssClass: 'pop-over-style'
+    });
+    return await popover.present();
   }
 }

@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AddComplaintPageRoutingModule } from './add-complaint-routing.module';
 import { AddComplaintPage } from './add-complaint.page';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
+import { SuccessComplaintComponent } from 'src/app/shared/components/success-complaint/success-complaint.component';
 
 @NgModule({
   imports: [
@@ -11,8 +13,10 @@ import { AddComplaintPage } from './add-complaint.page';
     FormsModule,
     IonicModule,
     AddComplaintPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
-  declarations: [AddComplaintPage]
+  declarations: [AddComplaintPage],
+  entryComponents:[SuccessComplaintComponent]
 })
 export class AddComplaintPageModule {}
