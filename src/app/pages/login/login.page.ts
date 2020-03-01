@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
       debugger
       this.loginService.userData = [{ id: "37483llsgks", name: "Nikhil Gautam", email: "nikhil@yahoo.com" }]
       localStorage.setItem("user", JSON.stringify(this.loginService.userData))
-      this.router.navigate(['/home'])
+      this.router.navigate(['/home'],{ replaceUrl: true })
     })
 
     //Google Sign in
