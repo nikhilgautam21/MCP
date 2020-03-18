@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'complaint-listing',
     loadChildren: () => import('./pages/complaint-listing/complaint-listing.module').then( m => m.ComplaintListingPageModule)
   },
+  {
+    path: 'full-image',
+    loadChildren: () => import('./pages/full-image/full-image.module').then( m => m.FullImagePageModule)
+  },
+  {
+    path: 'my-profile',
+    loadChildren: () => import('./pages/my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+  },
 ];
 
 @NgModule({

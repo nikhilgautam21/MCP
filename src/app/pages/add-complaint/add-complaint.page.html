@@ -1,13 +1,15 @@
 <ion-content>
   <div class='m-add-outer'>
     <form [formGroup]="complaintForm" (submit)="addComplaint()">
-      <ion-item>
+      <div>
         <ion-label>Name<span class="red">*</span></ion-label>
-        <ion-input formControlName="name"></ion-input>
+        <ion-item>
+          <ion-input formControlName="name"></ion-input>
+        </ion-item>
         <div class="m-error" *ngIf="complaintForm.controls.name.touched">  
           <span *ngIf="complaintForm.controls.name.hasError('required')">Name is required</span>
         </div>
-      </ion-item>
+      </div>
       <ion-item>
         <ion-label>Phone<span class="red">*</span></ion-label>
         <ion-input formControlName="phone"></ion-input>

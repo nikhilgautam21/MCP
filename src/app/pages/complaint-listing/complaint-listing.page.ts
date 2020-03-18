@@ -22,7 +22,6 @@ export class ComplaintListingPage implements OnInit {
         data: JSON.stringify(complaint)
       }
     }
-    debugger
     this.router.navigate(['/complaint-detail'], naivgationExtra )
   }
 
