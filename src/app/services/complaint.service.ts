@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient ,HttpHeaders } from '@angular/common/http';
 import API_CONSTANTS from '../constants/api-constants.json';
 import SYSTEM_CONSTANTS from '../constants/system-constants.json'
+import { HTTP } from '@ionic-native/http/ngx';
+import { BaseService } from '../core/base.service.js';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,18 @@ import SYSTEM_CONSTANTS from '../constants/system-constants.json'
 export class ComplaintService {
 
   constructor(
-    public http: HttpClient
+    public http: BaseService
   ) { }
 
   addComplaint(data) {
-    const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
-    return this.http.post(`${SYSTEM_CONSTANTS.API_URL}${API_CONSTANTS.ADD_COMPLAINT}`, data , {headers} )
+    return this.http.post(`${API_CONSTANTS.ADD_COMPLAINT}`, data, true)
   }
 
+  uploadPhotos(data) {
+    return this.http.post(`${API_CONSTANTS.UPLOAD_IMAGES}`, data, false)
+  }
+
+  getAllComplaints() {
+    return this.http.get(`${API_CONSTANTS.ALL_COMPLAINTS}`, {}, true)
+  }
 }

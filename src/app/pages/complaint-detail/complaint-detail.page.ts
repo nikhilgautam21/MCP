@@ -21,11 +21,10 @@ export class ComplaintDetailPage implements OnInit {
   ngOnInit() {
   }
 
-  showFullImage(){
-    debugger
+  showFullImage(url){
     let naivgationExtra: NavigationExtras ={
       queryParams :{
-        imageUrl: "https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg"
+        imageUrl: url
       }
     }
     this.router.navigate(["/full-image"],naivgationExtra)

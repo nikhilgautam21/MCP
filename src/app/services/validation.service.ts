@@ -9,10 +9,10 @@ export class ValidationService {
   constructor() { }
 
   phoneValidator = (control: AbstractControl): any => {
-    if(control.value){
+    if(!control.value){
       return null;
     }
-    const NUMBER_REGEXP = /^((\+){1}91){1}[1-9]{1}[0-9]{9}$/;
+    const NUMBER_REGEXP = /^[0-9]{10}$/;
     if (NUMBER_REGEXP.test(control.value)) {
       return null;
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-success-complaint',
@@ -8,17 +8,21 @@ import { PopoverController } from '@ionic/angular';
   styleUrls: ['./success-complaint.component.scss'],
 })
 export class SuccessComplaintComponent implements OnInit {
+  complaintId: any;
 
   constructor(
     public router: Router,
-    private popoverController: PopoverController
-  ) { }
+    private popoverController: PopoverController,
+    public navParams: NavParams
+  ) {
+    this.complaintId = this.navParams.get("complaintId")
+  }
 
   ngOnInit() { }
 
   goToComplaint() {
     this.dismissPopover();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/complaint-listing'])
   }
 
   async dismissPopover() {

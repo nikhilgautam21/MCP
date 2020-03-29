@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import COMPLAINTS from '../../constants/complaints.json'
 import { Router, NavigationExtras, NavigationStart } from '@angular/router';
+import { ComplaintService } from 'src/app/services/complaint.service.js';
 @Component({
   selector: 'app-complaint-listing',
   templateUrl: './complaint-listing.page.html',
@@ -8,12 +8,20 @@ import { Router, NavigationExtras, NavigationStart } from '@angular/router';
 })
 export class ComplaintListingPage implements OnInit {
 
-  complaints:any = COMPLAINTS.data;
+  complaints:any
   constructor(
-    public router: Router
+    public router: Router,
+    public complaintService: ComplaintService
   ) { }
 
   ngOnInit() {
+    this.getAllComplaints();
+  }
+
+  getAllComplaints(){
+    this.complaintService.getAllComplaints().subscribe(res=>{
+      this.complaints = res;
+    })
   }
 
   goToDetail(complaint){

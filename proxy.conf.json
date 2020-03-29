@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "http://ws.palistreetlights.com",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

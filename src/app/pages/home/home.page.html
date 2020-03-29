@@ -1,13 +1,13 @@
 <ion-content>
   <div class="m-body-outer">
     <div>
-      <ion-button routerLink="/add-complaint">New Complaint</ion-button>
+      <ion-button (click)="navigateTo('/add-complaint')">New Complaint</ion-button>
     </div>
     <div>
-      <ion-button routerLink="/complaint-listing">Complaint Status</ion-button>
+      <ion-button (click)="navigateTo('/complaint-listing')">Complaint Status</ion-button>
     </div>
     <div>
-      <ion-button routerLink="/my-profile">Your Account</ion-button>
+      <ion-button (click)="navigateTo('/my-profile')">Your Account</ion-button>
     </div>
   </div>
 </ion-content>

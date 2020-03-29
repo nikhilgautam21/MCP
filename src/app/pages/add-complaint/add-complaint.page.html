@@ -1,48 +1,53 @@
 <ion-content>
   <div class='m-add-outer'>
     <form [formGroup]="complaintForm" (submit)="addComplaint()">
-      <div>
+      <div class="m-form-field">
         <ion-label>Name<span class="red">*</span></ion-label>
         <ion-item>
           <ion-input formControlName="name"></ion-input>
         </ion-item>
-        <div class="m-error" *ngIf="complaintForm.controls.name.touched">  
+        <div class="m-error" *ngIf="complaintForm.controls.name.touched">
           <span *ngIf="complaintForm.controls.name.hasError('required')">Name is required</span>
         </div>
       </div>
-      <ion-item>
+      <div class="m-form-field">
         <ion-label>Phone<span class="red">*</span></ion-label>
-        <ion-input formControlName="phone"></ion-input>
-        <div class="m-error" *ngIf="complaintForm.controls.phone.touched">  
+        <ion-item>
+          <ion-input formControlName="phone"></ion-input>
+        </ion-item>
+        <div class="m-error" *ngIf="complaintForm.controls.phone.touched">
           <span *ngIf="complaintForm.controls.phone.hasError('required')">Phone is required</span>
           <span *ngIf="complaintForm.controls.phone.hasError('invalidPhone')">Invalid number</span>
         </div>
-      </ion-item>
-      <ion-item>
+      </div>
+      <div class="m-form-field">
         <ion-label>Address<span class="red">*</span></ion-label>
-        <ion-input formControlName="address"></ion-input>
-        <div class="m-error" *ngIf="complaintForm.controls.address.touched">  
+        <ion-item>
+          <ion-input formControlName="address"></ion-input>
+        </ion-item>
+        <div class="m-error" *ngIf="complaintForm.controls.address.touched">
           <span *ngIf="complaintForm.controls.address.hasError('required')">Address is required</span>
         </div>
-      </ion-item>
-      <ion-item>
-        <ion-label>Image<span class="red">*</span></ion-label>
-        <ion-icon name="add" (click)="selectImage()"></ion-icon>
-      </ion-item>
-      <div>
+      </div>
+      <div class="m-form-field">
+        <ion-label>Notes<span class="red">*</span></ion-label>
+        <ion-item>
+          <ion-textarea formControlName="notes" placeholder="Enter more information here..."></ion-textarea>
+        </ion-item>
+        <div class="m-error" *ngIf="complaintForm.controls.notes.touched">
+          <span *ngIf="complaintForm.controls.notes.hasError('required')">Notes is required</span>
+        </div>
+      </div>
+      <div class="m-form-field">
+        <ion-item>
+          <ion-label>Image<span class="red">*</span></ion-label>
+          <ion-icon name="add" (click)="selectImage()"></ion-icon>
+        </ion-item>
         <ion-item *ngFor="let item of pictures; let i=index">
           <img class="m-comp-img" [src]="item" alt />
           <ion-icon name="close" (click)="deleteImage(i)"></ion-icon>
         </ion-item>
       </div>
-      <ion-item>
-        <ion-label>Notes<span class="red">*</span></ion-label>
-        <ion-input formControlName="notes"></ion-input>
-        <div class="m-error" *ngIf="complaintForm.controls.notes.touched">  
-          <span *ngIf="complaintForm.controls.notes.hasError('required')">Notes is required</span>
-        </div>
-      </ion-item>
-
       <div>
         <ion-button type="submit">Submit</ion-button>
       </div>

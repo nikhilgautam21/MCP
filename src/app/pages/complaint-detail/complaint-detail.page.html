@@ -2,17 +2,18 @@
   <div class="m-comp-detail">
     <div class="m-comp-number">
       <p>Complaint No.</p>
-      <span><b>#{{complaint.id}} </b></span>
+      <span><b>#{{complaint.complaint_number}} </b></span>
+    </div>
+    <div class="m-comp-note">
+      <p>{{ complaint.name }}</p>
     </div>
     <div class="m-comp-note">
       <p>{{ complaint.notes }}</p>
     </div>
     <div class="m-comp-images">
-      <img src="https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg" alt="" (click)="showFullImage()"/>
-      <img src="https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg" alt/>
-      <img src="https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg" alt/>
-      <img src="https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg" alt/>
-      <img src="https://image.shutterstock.com/image-photo/shy-female-possum-grass-260nw-529158298.jpg" alt/>
+      <ion-item *ngFor="let item of complaint.images">
+        <img [src]="item" alt="" (click)="showFullImage(item)"/>
+      </ion-item>
     </div>
     <div class="m-comp-status">
       <h4>Status</h4>

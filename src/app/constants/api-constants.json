@@ -1,4 +1,6 @@
 {
-    "LOGIN": "/login",
-    "ADD_COMPLAINT":"/add-complaint"
+    "GOOGLE_LOGIN": "/auth/google",
+    "ADD_COMPLAINT":"/complaint/add",
+    "UPLOAD_IMAGES":"/complaint/uploadimages",
+    "ALL_COMPLAINTS":"/complaint/all"
 }
