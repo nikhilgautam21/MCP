@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
         this.loginService.login({ "googletoken": this.googleData.accessToken }).subscribe(resp => {
           this.loginService.userData = resp.user
           localStorage.setItem("x-auth-token", resp["x-auth-token"] )
-          localStorage.setItem("user", resp["user"] )
+          localStorage.setItem("user", JSON.stringify(resp["user"]) )
           this.router.navigate(['/home'],{ replaceUrl: true })
         }, err => {
         })
