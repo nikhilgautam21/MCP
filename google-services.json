@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "63027818983",
-    "firebase_url": "https://mcp-project-269315.firebaseio.com",
-    "project_id": "mcp-project-269315",
-    "storage_bucket": "mcp-project-269315.appspot.com"
+    "project_number": "774752946499",
+    "firebase_url": "https://meta-altar-272622.firebaseio.com",
+    "project_id": "meta-altar-272622",
+    "storage_bucket": "meta-altar-272622.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:63027818983:android:4a225ddf6984e430fa4d42",
+        "mobilesdk_app_id": "1:774752946499:android:72c1cd3b5fdb129d1c47f6",
         "android_client_info": {
-          "package_name": "com.mcp.app"
+          "package_name": "com.palistreetlights.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "63027818983-mv81i72oqtjebkl717h0uk1fh36f7lmq.apps.googleusercontent.com",
+          "client_id": "774752946499-bfj1gf8h6r7fe10f7ij002cpc7ibfc76.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.mcp.app",
-            "certificate_hash": "421aeb6a08be792c145022fd616ad3690085a5df"
+            "package_name": "com.palistreetlights.app",
+            "certificate_hash": "c86deb5980aeb0b7cd6af99c8320479273ced468"
           }
         },
         {
-          "client_id": "63027818983-7llhhjrnvkrhou76nudd69nh6rvef5d8.apps.googleusercontent.com",
+          "client_id": "774752946499-tue965lb5vs0pqcbjt4k8eocvcdp8ug6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAXkpXYxVygN6JxqXHL4fe2HIEhiMtPE38"
+          "current_key": "AIzaSyAlyRdbAH2c5hxRMhtI9LIEavpzqXrNGyo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "63027818983-7llhhjrnvkrhou76nudd69nh6rvef5d8.apps.googleusercontent.com",
+              "client_id": "774752946499-tue965lb5vs0pqcbjt4k8eocvcdp8ug6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

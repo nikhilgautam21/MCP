@@ -79,8 +79,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.63027818983-npgep37fcu348vmi872kc8rqgt44ub9s",
-        "WEB_APPLICATION_CLIENT_ID": "63027818983-7llhhjrnvkrhou76nudd69nh6rvef5d8.apps.googleusercontent.com"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.774752946499-hhk16i1fq0fhv8pp3ta5dh1r8tqlbcts",
+        "WEB_APPLICATION_CLIENT_ID": "774752946499-tue965lb5vs0pqcbjt4k8eocvcdp8ug6.apps.googleusercontent.com"
       },
       "cordova-plugin-camera": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
