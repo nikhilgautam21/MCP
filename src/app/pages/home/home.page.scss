@@ -1,4 +1,43 @@
 .m-body-outer{
     text-align: center;
-    padding: 50% 0%;
+    padding: 50% 20px; 
+}
+ion-toolbar{
+    --background: linear-gradient(180deg, #2E57B3 0%, #4682C2 100%);
+    .m-logo{
+        text-align: center;
+        font-size: 36px;
+        color: #fff;
+        padding-top: 15px;
+        padding-bottom: 8px;
+    }
+}
+ion-button{
+    width: 100%;
+    color: #fff !important;
+    height: 56px;
+    overflow: hidden;
+    text-transform: none;
+    border: none;
+    margin: 0;
+    letter-spacing: 0;
+    --background: linear-gradient(180deg, #2F57B3 0%, #4682C2 100%);;
+    --background-focused: linear-gradient(180deg, #2F57B3 0%, #4682C2 100%);;
+    --background-hover: linear-gradient(180deg, #2F57B3 0%, #4682C2 100%);;
+    --background-activated: linear-gradient(180deg, #2F57B3 0%, #4682C2 100%);;
+    --opacity: 1;
+    --padding-start: 0;
+    --padding-end: 0;
+    --border-radius: 2px;
+    --color-activated: #fff;
+    --color-focused: #fff;
+    --color-hover: #fff;
+    font-size: 20px;
+    position: relative;
+    z-index: 99;
+    margin-bottom: 20px;
+    font-weight: 500;
+    ion-icon{
+        margin-right: 10px;
+    }
 }

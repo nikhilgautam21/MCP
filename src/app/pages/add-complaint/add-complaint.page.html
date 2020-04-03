@@ -1,3 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="m-head-in">
+      <ion-back-button [defaultHref]="defaultHref"> 
+      </ion-back-button>
+      <ion-title>Add Complaint</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <div class='m-add-outer'>
     <form [formGroup]="complaintForm" (submit)="addComplaint()">
@@ -23,7 +32,7 @@
       <div class="m-form-field">
         <ion-label>Address<span class="red">*</span></ion-label>
         <ion-item>
-          <ion-input formControlName="address"></ion-input>
+          <ion-textarea formControlName="address"></ion-textarea>
         </ion-item>
         <div class="m-error" *ngIf="complaintForm.controls.address.touched">
           <span *ngIf="complaintForm.controls.address.hasError('required')">Address is required</span>
@@ -40,7 +49,7 @@
       </div>
       <div class="m-form-field">
         <ion-item>
-          <ion-label>Image<span class="red">*</span></ion-label>
+          <ion-label>Add Image<span class="red">*</span></ion-label>
           <ion-icon name="add" (click)="selectImage()"></ion-icon>
         </ion-item>
         <ion-item *ngFor="let item of pictures; let i=index">

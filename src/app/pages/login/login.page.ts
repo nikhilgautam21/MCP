@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { LoginService } from '../../services/login.service'
 import { Router } from '@angular/router';
 import { debug } from 'util';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],

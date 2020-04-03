@@ -1,23 +1,26 @@
-table{
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-    white-space: nowrap;
+.m-head-in{
+    display: flex;
+    ion-back-button{
+        color: #fff;
+    }
+    ion-title{
+        padding: 0;
+        color: #fff;
+    }
+} 
+.m-comp-single {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-top: 10px;
+    span.m-date {
+        float: right; 
+    }
+    .m-number{
+        b{
+            color: #3c6fbc;
+        }
+    }
 }
-
-th, tr, td {
-    text-align: center;
-    border: 1px solid #E0E0E0;
-    padding: 5px;
-}
-
-.m-status{
-    color: white;
-    padding: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
 .red{
     background-color: red;
 }

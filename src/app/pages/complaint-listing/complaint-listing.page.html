@@ -1,9 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="m-head-in">
+      <ion-back-button [defaultHref]="defaultHref"> 
+      </ion-back-button>
+      <ion-title>Your Complaints</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <div class="m-comp-list">
-    <ion-item>
-      <h4>Your Complaints</h4>
-    </ion-item>
-    <table>
+  <div class="m-comp-list"> 
+    <div class="m-comp-single">
+      <span class="m-number">Complaint No: <b>012515</b></span>
+      <span class="m-date">Date: <b>12-02-2020</b></span>
+      <p>
+        Complaint Notes text about 40 words....
+      </p>
+      <span class="m-status">Status: <b>Pending</b></span>
+    </div>
+    <div class="m-comp-single">
+      <span class="m-number">Complaint No: <b>012515</b></span>
+      <span class="m-date">Date: <b>12-02-2020</b></span>
+      <p>
+        Complaint Notes text about 40 words....
+      </p>
+      <span class="m-status">Status: <b>Pending</b></span>
+    </div>
+    <div class="m-comp-single">
+      <span class="m-number">Complaint No: <b>012515</b></span>
+      <span class="m-date">Date: <b>12-02-2020</b></span>
+      <p>
+        Complaint Notes text about 40 words....
+      </p>
+      <span class="m-status">Status: <b>Pending</b></span>
+    </div>
+    <!-- <table>
       <thead>
         <th>Date</th>
         <th>Complaint No.</th>
@@ -22,6 +52,6 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </ion-content>
