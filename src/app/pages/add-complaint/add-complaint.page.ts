@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ValidationService } from 'src/app/services/validation.service';
 import { ComplaintService } from 'src/app/services/complaint.service';
 import { SuccessComplaintComponent } from 'src/app/shared/components/success-complaint/success-complaint.component'
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   selector: 'app-add-complaint',
@@ -33,7 +34,8 @@ export class AddComplaintPage implements OnInit {
     public domSanitizer: DomSanitizer,
     public validationService: ValidationService,
     public complaintService: ComplaintService,
-    public popoverController: PopoverController
+    public popoverController: PopoverController,
+    public utils: UtilityService
   ) {
     this.complaintForm = this.formBuilder.group({
       name: ["", Validators.required],
@@ -118,23 +120,23 @@ export class AddComplaintPage implements OnInit {
       this.complaintService.addComplaint(complaint).subscribe(res => {
         let complaintNumber = res.complaint_number
         let complaintId = res._id
+        this.complaintForm.reset();
         if (this.pictures.length > 0) {
           let imagePayload = {
             complaint_id: complaintId,
             images: this.pictures
           }
           this.complaintService.uploadPhotos(imagePayload).subscribe(resp => {
-            this.complaintForm.reset();
             this.pictures = []
             this.presentPopover(null, complaintNumber);
           })
         }
         else{
-          this.complaintForm.reset();
           this.pictures = []
           this.presentPopover(null, complaintNumber);
         }
       }, err => {
+        this.utils.showToast("Something went wrong. Please try again")
       })
     }
   }

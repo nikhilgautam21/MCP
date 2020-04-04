@@ -1,0 +1,30 @@
+.m-head-in{
+    display: flex;
+    ion-back-button{
+        color: #fff;
+    }
+    ion-title{
+        padding: 0;
+        color: #fff;
+    }
+}
+.m-profile{
+    .m-form-field{
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .m-profile-img{
+        background: linear-gradient(180deg, #2E57B3 0%, #4682C2 100%); 
+        padding: 35px 15px 30px; 
+        position: static; 
+        width: 100%; 
+        z-index: 99;
+    }
+    .m-acc-head-img{
+        width: 73px; height: 73px; margin: auto; display: flex; justify-content: center; align-items: center; margin-bottom: 25px;
+        ion-icon{color: #B5B5B5;}    
+    }
+    .m-profile-detail{
+        padding:15px
+    }
+}

@@ -1,37 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <div class="m-head-in">
-      <ion-back-button [defaultHref]="defaultHref"> 
+      <ion-back-button [defaultHref]="defaultHref">
       </ion-back-button>
       <ion-title>Your Complaints</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="m-comp-list"> 
-    <div class="m-comp-single">
-      <span class="m-number">Complaint No: <b>012515</b></span>
-      <span class="m-date">Date: <b>12-02-2020</b></span>
-      <p>
-        Complaint Notes text about 40 words....
-      </p>
-      <span class="m-status">Status: <b>Pending</b></span>
-    </div>
-    <div class="m-comp-single">
-      <span class="m-number">Complaint No: <b>012515</b></span>
-      <span class="m-date">Date: <b>12-02-2020</b></span>
-      <p>
-        Complaint Notes text about 40 words....
-      </p>
-      <span class="m-status">Status: <b>Pending</b></span>
-    </div>
-    <div class="m-comp-single">
-      <span class="m-number">Complaint No: <b>012515</b></span>
-      <span class="m-date">Date: <b>12-02-2020</b></span>
-      <p>
-        Complaint Notes text about 40 words....
-      </p>
-      <span class="m-status">Status: <b>Pending</b></span>
+  <div class="m-comp-list" *ngIf="complaints && complaints.length > 0; else noComplaints">
+    <div *ngFor="let complaint of complaints" class="m-comp-single">
+      <div (click)="goToDetail(complaint)"> 
+        <span class="m-number">Complaint No: <b>{{complaint.complaint_number}}</b></span>
+        <span class="m-date">Date: <b>{{ complaint.date}}</b></span>
+        <p>
+          {{complaint.name}}
+        </p>
+        <span class="m-status">Status: <b>{{complaint.status}}</b></span>
+      </div>
     </div>
     <!-- <table>
       <thead>
@@ -54,4 +40,7 @@
       </tbody>
     </table> -->
   </div>
+  <ng-template #noComplaints>
+    <p class="m-no-complaints">No Complaints Available</p>
+  </ng-template>
 </ion-content>

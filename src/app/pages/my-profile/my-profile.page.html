@@ -1,19 +1,32 @@
-<ion-content>
-    <div class="m-profile">
-        <div class="m-profile-pic"></div>
-        <div class="m-profile-detail">
-          <div class="m-form-group">
-            <ion-label>Name:</ion-label>
-            <ion-item>
-              <ion-input [value]="user.name" disabled></ion-input>
-            </ion-item>
-          </div>
-          <div class="m-form-group">
-            <ion-label>Email:</ion-label>
-              <ion-item>
-                <ion-input [value]="user.email" disabled></ion-input>
-              </ion-item>
-            </div>
-        </div>
+<ion-header>
+  <ion-toolbar>
+    <div class="m-head-in">
+      <ion-back-button [defaultHref]="defaultHref">
+      </ion-back-button>
+      <ion-title>My Account</ion-title>
     </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="m-profile">
+    <div class="m-profile-img">
+      <div class="m-acc-head-img">
+        <img src="../../../assets/icon/user.png" alt="">
+      </div>
+    </div>
+    <div class="m-profile-detail">
+      <div class="m-form-field">
+        <ion-label>Name:</ion-label>
+        <ion-item>
+          <ion-input [value]="user.name" disabled></ion-input>
+        </ion-item>
+      </div>
+      <div class="m-form-field">
+        <ion-label>Email:</ion-label>
+        <ion-item>
+          <ion-input [value]="user.email" disabled></ion-input>
+        </ion-item>
+      </div>
+    </div>
+  </div>
 </ion-content>

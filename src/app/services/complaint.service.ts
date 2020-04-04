@@ -18,7 +18,7 @@ export class ComplaintService {
   }
 
   uploadPhotos(data) {
-    return this.http.post(`${API_CONSTANTS.UPLOAD_IMAGES}`, data, false)
+    return this.http.post(`${API_CONSTANTS.UPLOAD_IMAGES}`, data, true)
   }
 
   getAllComplaints() {

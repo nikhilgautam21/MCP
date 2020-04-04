@@ -22,7 +22,7 @@ export class SuccessComplaintComponent implements OnInit {
 
   goToComplaint() {
     this.dismissPopover();
-    this.router.navigate(['/complaint-listing'])
+    this.router.navigate(['/complaint-listing'],{ replaceUrl: true })
   }
 
   async dismissPopover() {

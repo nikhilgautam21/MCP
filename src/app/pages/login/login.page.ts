@@ -3,6 +3,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { LoginService } from '../../services/login.service'
 import { Router } from '@angular/router';
 import { debug } from 'util';
+import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
   constructor(
     public googlePlus: GooglePlus,
     public loginService: LoginService,
-    public router: Router
+    public router: Router,
+    public utils:UtilityService
   ) { }
 
   ngOnInit() {
@@ -37,10 +39,15 @@ export class LoginPage implements OnInit {
       .then(res => {
         this.googleData = res;
         this.loginService.login({ "googletoken": this.googleData.accessToken }).subscribe(resp => {
-          this.loginService.userData = resp.user
+          if(resp !={}){
+            this.loginService.userData = resp.user
           localStorage.setItem("x-auth-token", resp["x-auth-token"] )
           localStorage.setItem("user", JSON.stringify(resp["user"]) )
           this.router.navigate(['/home'],{ replaceUrl: true })
+          }
+          else{
+            this.utils.showToast("There was some problem in login. Please try again")
+          }
         }, err => {
         })
     

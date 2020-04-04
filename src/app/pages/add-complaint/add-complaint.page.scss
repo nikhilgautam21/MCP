@@ -1,6 +1,6 @@
 .m-comp-img{
-    height:50px;
-    width: 50px;
+    height:100px;
+    width: 100px;
 }
 .m-head-in{
     display: flex;
@@ -47,3 +47,14 @@
     padding: 0;
     margin-bottom: 30px;
 }
+
+.img-wrap {
+    display: inline-block;
+    position: relative;
+    margin: 10px 10px 10px 0px
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }

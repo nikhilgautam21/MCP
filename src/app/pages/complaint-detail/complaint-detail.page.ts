@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import STATUS from "../../constants/status.json";
 
 @Component({
   selector: 'app-complaint-detail',
@@ -8,7 +9,8 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 })
 export class ComplaintDetailPage implements OnInit {
 
-  complaint: any
+  complaint: any;
+  timer:any = 1;
   constructor(
     public route: ActivatedRoute,
     public router: Router
@@ -19,6 +21,16 @@ export class ComplaintDetailPage implements OnInit {
   }
 
   ngOnInit() {
+    this.counter();
+  }
+
+  counter(){
+    setTimeout(()=>{
+      if(this.timer != 0){
+        this.timer = this.timer - 1
+        this.counter()
+      }
+    },1000)
   }
 
   showFullImage(url){

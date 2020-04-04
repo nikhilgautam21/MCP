@@ -27,7 +27,7 @@ export class AppComponent {
       if (this.utils.getUserInfo()) {
         this.router.navigate(['/home'])
       } else {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/login'])
       }
       this.statusBar.styleDefault();
       this.splashScreen.hide();

@@ -1,5 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="m-head-in">
+      <ion-back-button [defaultHref]="defaultHref">
+      </ion-back-button>
+      <ion-title>Complaint</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <div class="m-comp-detail">
+  <!-- <div class="m-comp-detail">
     <div class="m-comp-number">
       <p>Complaint No.</p>
       <span><b>#{{complaint.complaint_number}} </b></span>
@@ -12,7 +21,7 @@
     </div>
     <div class="m-comp-images">
       <ion-item *ngFor="let item of complaint.images">
-        <img [src]="item" alt="" (click)="showFullImage(item)"/>
+        <img [src]="item" alt="" (click)="showFullImage(item)" />
       </ion-item>
     </div>
     <div class="m-comp-status">
@@ -23,6 +32,23 @@
           {{complaint.status}}
         </p>
       </span>
+    </div>
+  </div> -->
+  <div class="m-comp-list">
+    <div class="m-comp-single">
+      <div>
+        <span class="m-number">Complaint No: <b>{{complaint.complaint_number}}</b></span>
+        <span class="m-date">Date: <b>{{ complaint.date}}</b></span>
+        <h4>{{complaint.name}}</h4>
+        <p>{{complaint.notes}}</p>
+        <div class="m-comp-images">
+          <div *ngFor="let item of complaint.images">
+            <img *ngIf="!timer" [src]="item" alt="" (click)="showFullImage(item)" />
+            <img *ngIf="timer" src="../../../assets/images/loader.gif" alt="" />
+          </div>
+        </div>
+        <span class="">Status: <b>{{complaint.status}}</b></span>
+      </div>
     </div>
   </div>
 </ion-content>
