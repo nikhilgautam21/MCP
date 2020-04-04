@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginAuthGuardService } from './services/login-auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'my-profile',
-    loadChildren: () => import('./pages/my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+    loadChildren: () => import('./pages/my-profile/my-profile.module').then( m => m.MyProfilePageModule),
+    canActivate:[LoginAuthGuardService]
   },
 ];
 

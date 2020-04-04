@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +8,7 @@ export class UtilityService {
 
   constructor(
     public toastController: ToastController,
+    public alertCtrl: AlertController
   ) { }
 
   getUserInfo() {
@@ -21,5 +22,27 @@ export class UtilityService {
       duration: 2000
     });
     toast.present();
+  }
+
+  showAlert(){
+    return new Promise(async (resolve, reject)=>{
+      const alert = await this.alertCtrl.create({
+        message: "Are you sure ?",
+        buttons: [{
+          text: "Ok",
+          handler: () => {
+            resolve();
+          }
+        },
+        {
+          text: "Cancel",
+          handler: () => {
+            reject();
+          }
+        }],
+        backdropDismiss: false
+      });
+      await alert.present();
+    })
   }
 }
