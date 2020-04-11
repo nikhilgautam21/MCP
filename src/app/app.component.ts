@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { UtilityService } from './services/utility.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +19,14 @@ export class AppComponent {
     private statusBar: StatusBar,
     public utils: UtilityService,
     public router: Router,
+    public translate: TranslateService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.translate.setDefaultLang('hindi')
       if (this.utils.getUserInfo()) {
         this.router.navigate(['/home'])
       } else {

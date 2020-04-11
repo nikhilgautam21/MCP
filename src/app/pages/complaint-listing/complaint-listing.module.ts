@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ComplaintListingPageRoutingModule } from './complaint-listing-routing.module';
 
 import { ComplaintListingPage } from './complaint-listing.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComplaintListingPageRoutingModule
+    ComplaintListingPageRoutingModule,
+    TranslateModule
   ],
   declarations: [ComplaintListingPage]
 })

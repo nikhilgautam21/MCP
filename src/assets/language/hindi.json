@@ -1,0 +1,28 @@
+{
+    "SIGN_IN_GOOGLE": "Google के साथ साइन इन करें",
+    "NEW_COMPLAINT" : "नई शिकायत",
+    "COMPLAINT_LIST": "शिकायत सूची",
+    "MY_PROFILE": "मेरी प्रोफाइल",
+    "NAME" : "नाम",
+    "PHONE" : "फ़ोन",
+    "ADDRESS" : "पता",
+    "NOTES": "टिप्पणियाँ",
+    "ADD_IMAGES": "तस्वीरें जोड़ें",
+    "SUBMIT": "जमा करें",
+    "NAME_REQUIRED": "नाम आवश्यक है",
+    "PHONE_REQUIRED": "फोन आवश्यक है",
+    "ADDRESS_REQUIRED": "पता आवश्यक है",
+    "INVALID_PHONE": "अवैध फोन नंबर",
+    "ADD_COMPLAINT" : "शिकायत जोड़ें",
+    "ENTER_MORE_INFO": "अधिक जानकारी यहाँ दर्ज करें",
+    "YOUR_COMPLAINTS" : "आपकी शिकायतें",
+    "COMPLAINT_NUMBER": "शिकायत संख्या",
+    "DATE": "तारीख",
+    "STATUS": "स्थिति",
+    "NO_COMPLAINTS_AVAILABLE": "कोई शिकायत उपलब्ध नहीं है",
+    "COMPLAINT": "शिकायत",
+    "COMPLAINT_PHOTO" :"शिकायत फोटो",
+    "EMAIL": "ईमेल",
+    "LOGOUT" : "लॉग आउट"
+
+}

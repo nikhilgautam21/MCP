@@ -3,7 +3,7 @@
     <div class="m-head-in">
       <ion-back-button [defaultHref]="defaultHref">
       </ion-back-button>
-      <ion-title>Your Complaints</ion-title>
+      <ion-title>{{'YOUR_COMPLAINTS' | translate}}</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -11,12 +11,12 @@
   <div class="m-comp-list" *ngIf="complaints && complaints.length > 0; else noComplaints">
     <div *ngFor="let complaint of complaints" class="m-comp-single">
       <div (click)="goToDetail(complaint)"> 
-        <span class="m-number">Complaint No: <b>{{complaint.complaint_number}}</b></span>
-        <span class="m-date">Date: <b>{{ complaint.date}}</b></span>
+        <span class="m-number">{{'COMPLAINT_NUMBER' | translate}}: <b>{{complaint.complaint_number}}</b></span>
+        <span class="m-date">{{'DATE' | translate}}: <b>{{ complaint.date}}</b></span>
         <p>
           {{complaint.name}}
         </p>
-        <span class="m-status">Status: <b>{{complaint.status}}</b></span>
+        <span class="m-status">{{'STATUS' | translate}}: <b>{{complaint.status}}</b></span>
       </div>
     </div>
     <!-- <table>
@@ -41,6 +41,6 @@
     </table> -->
   </div>
   <ng-template #noComplaints>
-    <p class="m-no-complaints">No Complaints Available</p>
+    <p class="m-no-complaints">{{'NO_COMPLAINTS_AVAILABLE' | translate}}</p>
   </ng-template>
 </ion-content>

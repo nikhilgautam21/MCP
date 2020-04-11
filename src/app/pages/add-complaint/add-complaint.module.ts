@@ -6,6 +6,7 @@ import { AddComplaintPageRoutingModule } from './add-complaint-routing.module';
 import { AddComplaintPage } from './add-complaint.page';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { SuccessComplaintComponent } from 'src/app/shared/components/success-complaint/success-complaint.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SuccessComplaintComponent } from 'src/app/shared/components/success-com
     IonicModule,
     AddComplaintPageRoutingModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    TranslateModule
   ],
   declarations: [AddComplaintPage],
   entryComponents:[SuccessComplaintComponent]

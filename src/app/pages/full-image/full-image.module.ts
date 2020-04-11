@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FullImagePageRoutingModule } from './full-image-routing.module';
 
 import { FullImagePage } from './full-image.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FullImagePageRoutingModule
+    FullImagePageRoutingModule,
+    TranslateModule
   ],
   declarations: [FullImagePage]
 })

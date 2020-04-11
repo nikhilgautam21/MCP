@@ -3,7 +3,7 @@
     <div class="m-head-in">
       <ion-back-button [defaultHref]="defaultHref">
       </ion-back-button>
-      <ion-title>My Account</ion-title>
+      <ion-title>{{ 'MY_PROFILE' | translate}}</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -16,13 +16,13 @@
     </div>
     <div class="m-profile-detail">
       <div class="m-form-field">
-        <ion-label>Name:</ion-label>
+        <ion-label>{{'NAME' | translate}}:</ion-label>
         <ion-item>
           <ion-input [value]="user.name" disabled></ion-input>
         </ion-item>
       </div>
       <div class="m-form-field">
-        <ion-label>Email:</ion-label>
+        <ion-label>{{'EMAIL' | translate}}:</ion-label>
         <ion-item>
           <ion-input [value]="user.email" disabled></ion-input>
         </ion-item>
@@ -31,5 +31,5 @@
   </div>
 </ion-content>
 <ion-footer>
-    <ion-button class="m-btn-logout"(click)="logout()">Logout</ion-button>
+    <ion-button class="m-btn-logout"(click)="logout()">{{'LOGOUT' | translate}}</ion-button>
 </ion-footer>

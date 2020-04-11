@@ -41,7 +41,7 @@ export class AddComplaintPage implements OnInit {
       name: ["", Validators.required],
       phone: ["", [Validators.required, validationService.phoneValidator]],
       address: ["", Validators.required],
-      notes: ["", Validators.required]
+      notes: [""]
     })
   }
 

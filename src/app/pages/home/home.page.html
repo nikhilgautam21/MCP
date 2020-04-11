@@ -9,15 +9,15 @@
   <div class="m-body-outer">
     <div>
       <ion-button (click)="navigateTo('/add-complaint')"><ion-icon name="add"></ion-icon>
-         New Complaint</ion-button>
+         {{'NEW_COMPLAINT' | translate}}</ion-button>
     </div>
     <div>
       <ion-button (click)="navigateTo('/complaint-listing')"><ion-icon name="eye"></ion-icon>
-        Complaint Status</ion-button>
+        {{'COMPLAINT_LIST' | translate}}</ion-button>
     </div>
-    <div>
+    <!-- <div>
       <ion-button (click)="navigateTo('/my-profile')">  <ion-icon name="person"></ion-icon>
-         Your Account</ion-button>
-    </div>
+        {{'MY_PROFILE' | translate}}</ion-button>
+    </div> -->
   </div>
 </ion-content>

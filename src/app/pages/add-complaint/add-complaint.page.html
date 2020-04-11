@@ -3,7 +3,7 @@
     <div class="m-head-in">
       <ion-back-button [defaultHref]="defaultHref">
       </ion-back-button>
-      <ion-title>Add Complaint</ion-title>
+      <ion-title>{{ 'ADD_COMPLAINT' | translate}}</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -11,45 +11,45 @@
   <div class='m-add-outer'>
     <form [formGroup]="complaintForm" (submit)="addComplaint()">
       <div class="m-form-field">
-        <ion-label>Name<span class="red">*</span></ion-label>
+        <ion-label>{{'NAME' | translate}}<span class="red">*</span></ion-label>
         <ion-item>
           <ion-input formControlName="name"></ion-input>
         </ion-item>
         <div *ngIf="complaintForm.controls.name.touched">
-          <span class="m-error" *ngIf="complaintForm.controls.name.hasError('required')">Name is required</span>
+          <span class="m-error" *ngIf="complaintForm.controls.name.hasError('required')">{{ 'NAME_REQUIRED' | translate}}</span>
         </div>
       </div>
       <div class="m-form-field">
-        <ion-label>Phone<span class="red">*</span></ion-label>
+        <ion-label>{{ 'PHONE' | translate}}<span class="red">*</span></ion-label>
         <ion-item>
           <ion-input formControlName="phone"></ion-input>
         </ion-item>
         <div *ngIf="complaintForm.controls.phone.touched">
-          <span class="m-error" *ngIf="complaintForm.controls.phone.hasError('required')">Phone is required</span>
-          <span class="m-error" *ngIf="complaintForm.controls.phone.hasError('invalidPhone')">Invalid number</span>
+          <span class="m-error" *ngIf="complaintForm.controls.phone.hasError('required')">{{ 'PHONE_REQUIRED' | translate}}</span>
+          <span class="m-error" *ngIf="complaintForm.controls.phone.hasError('invalidPhone')">{{ 'INVALID_PHONE' | translate}}</span>
         </div>
       </div>
       <div class="m-form-field">
-        <ion-label>Address<span class="red">*</span></ion-label>
+        <ion-label>{{ 'ADDRESS' | translate}}<span class="red">*</span></ion-label>
         <ion-item>
           <ion-textarea formControlName="address"></ion-textarea>
         </ion-item>
         <div *ngIf="complaintForm.controls.address.touched">
-          <span class="m-error" *ngIf="complaintForm.controls.address.hasError('required')">Address is required</span>
+          <span class="m-error" *ngIf="complaintForm.controls.address.hasError('required')">{{ 'ADDRESS_REQUIRED' | translate}}</span>
         </div>
       </div>
       <div class="m-form-field">
-        <ion-label>Notes<span class="red">*</span></ion-label>
+        <ion-label>{{ 'NOTES' | translate }}</ion-label>
         <ion-item>
-          <ion-textarea formControlName="notes" placeholder="Enter more information here..."></ion-textarea>
+          <ion-textarea formControlName="notes" [placeholder]="'ENTER_MORE_INFO' | translate"></ion-textarea>
         </ion-item>
-        <div *ngIf="complaintForm.controls.notes.touched">
+        <!-- <div *ngIf="complaintForm.controls.notes.touched">
           <span class="m-error" *ngIf="complaintForm.controls.notes.hasError('required')">Notes is required</span>
-        </div>
+        </div> -->
       </div>
       <div class="m-form-field">
         <ion-item>
-          <ion-label>Add Images<span class="red"></span></ion-label>
+          <ion-label>{{ 'ADD_IMAGES' | translate }}<span class="red"></span></ion-label>
           <ion-icon name="add" (click)="selectImage()"></ion-icon>
         </ion-item>
         <div>
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div>
-        <ion-button type="submit">Submit</ion-button>
+        <ion-button type="submit">{{ 'SUBMIT' | translate}}</ion-button>
       </div>
     </form>
   </div>

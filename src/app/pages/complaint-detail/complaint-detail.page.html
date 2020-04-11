@@ -3,7 +3,7 @@
     <div class="m-head-in">
       <ion-back-button [defaultHref]="defaultHref">
       </ion-back-button>
-      <ion-title>Complaint</ion-title>
+      <ion-title>{{'COMPLAINT' | translate}}</ion-title>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -37,8 +37,8 @@
   <div class="m-comp-list">
     <div class="m-comp-single">
       <div>
-        <span class="m-number">Complaint No: <b>{{complaint.complaint_number}}</b></span>
-        <span class="m-date">Date: <b>{{ complaint.date}}</b></span>
+        <span class="m-number">{{'COMPLAINT_NUMBER' | translate}}: <b>{{complaint.complaint_number}}</b></span>
+        <span class="m-date">{{'DATE' | translate}}: <b>{{ complaint.date}}</b></span>
         <h4>{{complaint.name}}</h4>
         <p>{{complaint.notes}}</p>
         <div class="m-comp-images">
@@ -47,7 +47,7 @@
             <img *ngIf="timer" src="../../../assets/images/loader.gif" alt="" />
           </div>
         </div>
-        <span class="">Status: <b>{{complaint.status}}</b></span>
+        <span class="">{{'STATUS' | translate}}: <b>{{complaint.status}}</b></span>
       </div>
     </div>
   </div>
