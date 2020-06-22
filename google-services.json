@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "774752946499-032obf9t00gmtr3dtl9e1s04ub9pomt2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.palistreetlights.app",
+            "certificate_hash": "4bb23b2f58e385aee3a4da3edba2340e6bd68b08"
+          }
+        },
+        {
+          "client_id": "774752946499-so4fap0fa74dimf38b375u2d1a70vhee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.palistreetlights.app",
+            "certificate_hash": "7ba8051fe5991660ce5e131371f85900f3ea8676"
+          }
+        },
+        {
           "client_id": "774752946499-bfj1gf8h6r7fe10f7ij002cpc7ibfc76.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -38,6 +54,13 @@
             {
               "client_id": "774752946499-tue965lb5vs0pqcbjt4k8eocvcdp8ug6.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "774752946499-hhk16i1fq0fhv8pp3ta5dh1r8tqlbcts.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.palistreetlights.app"
+              }
             }
           ]
         }
